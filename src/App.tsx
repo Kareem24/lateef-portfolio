@@ -344,13 +344,13 @@ function Contact() {
           </p>
           <div className="mt-8 space-y-3 text-sm">
             <a
-              href="mailto:yourname@email.com"
+              href="mailto:abdullateefe02@gmail.com"
               className="flex items-center gap-3 text-foreground transition-colors hover:text-primary"
             >
               <Mail className="h-4 w-4" />
-              yourname@email.com
+              abdullateefe02@gmail.com
             </a>
-            <a
+            {/* <a */}
               href="https://linkedin.com/in/yourprofile"
               target="_blank"
               rel="noreferrer"
@@ -358,8 +358,8 @@ function Contact() {
             >
               <LayoutDashboard className="h-4 w-4" />
               linkedin.com/in/yourprofile
-            </a>
-            <a
+            {/* </a> */}
+            {/* <a
               href="https://github.com/yourusername"
               target="_blank"
               rel="noreferrer"
@@ -367,7 +367,7 @@ function Contact() {
             >
               <LayoutDashboard className="h-4 w-4" />
               github.com/yourusername
-            </a>
+            </a> */}
           </div>
         </div>
 
