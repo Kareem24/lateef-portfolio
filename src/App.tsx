@@ -13,7 +13,6 @@ import {
   TrendingUp,
   Package,
   Send,
-  ImageIcon,
   LayoutDashboard,
 } from "lucide-react";
 import { useState } from "react";
@@ -22,6 +21,11 @@ import { toast } from "sonner";
 import { Button } from "./components/ui/button";
 import { Textarea } from "./components/ui/textarea";
 import { Input } from "./components/ui/input";
+import havenDeluxeImage from "./assets/projects/haven-deluxe.png";
+import heritageDecorImage from "./assets/projects/heritage-decor.png";
+import homeLuxuraImage from "./assets/projects/home-luxura.png";
+import nordicVogueImage from "./assets/projects/nordic-vogue.png";
+import pawfectHavenImage from "./assets/projects/pawfect-haven.png";
 
 const skills = [
   { icon: Palette, label: "Shopify Theme Customization" },
@@ -41,6 +45,7 @@ const projects = [
   {
     name: "Nordic Vogue",
     category: "Clothing Store",
+    image: nordicVogueImage,
     description:
       "Built a full-scale Shopify store with curated product catalog, premium theme integration, and a streamlined checkout experience designed to maximize conversions.",
     tags: ["Shopify", "Theme Setup", "Product Import"],
@@ -48,6 +53,7 @@ const projects = [
   {
     name: "Pawfect Haven",
     category: "Pet Store",
+    image: pawfectHavenImage,
     description:
       "Delivered an end-to-end Shopify build with optimized product imports, premium theme customization, and a brand-aligned storefront for a pet retail business.",
     tags: ["Shopify", "Storefront", "CRO"],
@@ -55,6 +61,7 @@ const projects = [
   {
     name: "Haven Deluxe",
     category: "Home Accessories",
+    image: havenDeluxeImage,
     description:
       "Launched a polished home accessories store with curated collections, premium theme configuration, and a clean, conversion-focused product browsing flow.",
     tags: ["Shopify", "Theme Setup", "UX"],
@@ -62,6 +69,7 @@ const projects = [
   {
     name: "Home Lucxora",
     category: "Home Accessories",
+    image: homeLuxuraImage,
     description:
       "Designed and built a complete Shopify storefront with product catalog setup, premium theme integration, and a mobile-first shopping experience.",
     tags: ["Shopify", "Mobile-first", "Product Import"],
@@ -69,6 +77,7 @@ const projects = [
   {
     name: "Heritage Decor",
     category: "Electronics Store",
+    image: heritageDecorImage,
     description:
       "Built a full Shopify store from scratch for an electronics brand with product importation, premium theme setup, and a refined checkout journey.",
     tags: ["Shopify", "Storefront", "Checkout"],
@@ -261,12 +270,17 @@ function Projects() {
             >
               <div>
                 <div className="mb-6 flex aspect-[16/9] items-center justify-center overflow-hidden rounded-lg border border-border bg-secondary/60">
-                  <div className="flex flex-col items-center gap-2 text-muted-foreground">
-                    <ImageIcon className="h-6 w-6" />
-                    <span className="font-mono text-[11px] uppercase tracking-widest">
+                  {p.image ? (
+                    <img
+                      src={p.image}
+                      alt={`${p.name} storefront preview`}
+                      className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                    />
+                  ) : (
+                    <span className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
                       {p.name} preview
                     </span>
-                  </div>
+                  )}
                 </div>
                 <div className="flex items-start justify-between gap-4">
                   <div>
